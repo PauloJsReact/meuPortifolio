@@ -64,7 +64,7 @@ button {
 .ph-logo-large{
     width: 100%;
     height: 100%;
-    display: flexbox;
+    display: flex;
 }
 
 .ph-logo-large img{
