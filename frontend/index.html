@@ -8,6 +8,7 @@
     <title>Paulo - Front End Dev Jr</title>
     <link rel="stylesheet" href="src/css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="src/css/style.css">
 
 </head>
@@ -16,56 +17,94 @@
 
     <div class="container-fluid">
         <div class="row">
-            <header class="col-sm-1">
+            <header class="col-sm-1 ph-menu-bar">
                 <div class="ph-logo">
                     <img src="src/img/logo.svg" alt="logo_meu_portifolio">
                     <h3 class="ph-text-wite">Paulo</h3>
                 </div>
                 <ul class="ph-menu ph-text-gray">
-                    <li class="ph-btn-medium ph-text-orange">
-                        <button>
+                    <li class="ph-btn-medium">
+                        <button onclick="navHome()" title="Navegar para Home" class="ph-text-gray">
                             <ion-icon name="home-outline"></ion-icon>
                         </button>
                     </li>
                     <li class="ph-btn-medium">
-                        <button>
+                        <button onclick="navSobre()" title="Navegar para Sobre" class="ph-text-gray">
                             <ion-icon name="person-outline"></ion-icon>
                         </button>
                     </li>
                     <li class="ph-btn-medium">
-                        <button>
+                        <button onclick="navProjects()" title="Navegar para Projetos" class="ph-text-gray">
                             <ion-icon name="apps-outline"></ion-icon>
                         </button>
                     </li>
                 </ul>
-
-
             </header>
-            <div class="col-sm-6 ph-page-content">
-                <div class="ph-text-title ph-text-wite ">
-                    <h1>Oi,</h1>
-                    <h1>Eu sou <span class="ph-text-orange ph-text-shadow">P</span>aulo, </h1>
-                    <h1>Desenvolvedor Front End.</h1>
+            <div class="col-sm-12 ph-page-content">
+                <div id="home" class="row">
+                    <div class="col-sm-6">
+                        <div class="ph-text-title ph-text-wite" data-aos="fade-right" data-aos-easing="ease-in-sine">
+                            <h1>Oi,</h1>
+                            <h1>Eu sou <span class="ph-text-orange ph-text-shadow">P</span>aulo, </h1>
+                            <h1>Desenvolvedor Front End.</h1>
 
-                    <p class="ph-text-gray">Desenvolverdor Front-End Jr - React Native | HTML | JavaScript | CSS | PHP |
-                        Wordpress
-                    </p>
+                            <p class="ph-text-gray">Desenvolverdor Front-End Jr - React Native | HTML | JavaScript | CSS
+                                |
+                                PHP |
+                                Wordpress
+                            </p>
+                            <button class="ph-btn ph-text-greem">Me contate</button>
+                        </div>
 
-                    <button class="ph-btn ph-text-greem">Me contate</button>
+                    </div>
+                    <div class="col-sm-6 ph-page-content ph-logo-large">
+                        <div class="ph-circle-box" data-aos="flip-right">
+                            <img src="https://avatars.githubusercontent.com/u/92490087?v=4" alt="logo_large">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="sobre" class="row">
+                    <div class="col-sm-12">
+                        <h1 class="ph-title ph-text-orange" data-aos="fade-up"
+                            data-aos-anchor-placement="bottom-center">Sobre</h1>
+
+                        <p class="ph-text ph-text-wite ph-text-box-low" data-aos="fade-up"
+                            data-aos-anchor-placement="bottom-center">Sou apaixonado por tecnologia e saber como as
+                            aplicações
+                            funcionam. Tenho
+                            facildade em
+                            aprender,
+                            sou muinto comunicativo e cheio de energia, escrever progamas faz parte dos meus hobbies,
+                            adoro
+                            fazer joguinhos e apps para celular. Todo dia estudo algo sobre Java Script, tenho noções
+                            sobre
+                            php, sql, Spring Rest e como eles funcionam em conjunto com o front-end. Tambem sou
+                            organizado e
+                            procuro fazer cursos e treinamentos a medida do possivel para melhorar cada vez mas na area.
+                        </p>
+                    </div>
+                </div>
+
+                <div id="projetos" class="row">
+                    <div class="col-sm-12">
+                        <h1 class="ph-title ph-text-orange" data-aos="fade-up"
+                            data-aos-anchor-placement="bottom-center">Projetos</h1>
+                    </div>
+
+                </div>
+
+                <div id="contato" class="row">
+
                 </div>
 
             </div>
-            <div class="col-sm-5 ph-page-content rotateimg180  ph-logo-large">
-                <div class="ph-circle-box">
-                    <img src="https://avatars.githubusercontent.com/u/92490087?v=4" alt="logo_large">
-                </div>
-            </div>
-
         </div>
 
     </div>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="src/scripts/main.js"></script>
 </body>
 
