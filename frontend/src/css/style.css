@@ -98,11 +98,6 @@ header{
     z-index: 100;
 }
 
-
-.animate__bounceInLeft {
-    animation-duration: cubic-bezier(.215,.61,.355,1);
-    animation-timing-function: cubic-bezier(.215,.61,.355,1);
-}
   
 .ph-page-content{
   height: 100%;
@@ -148,6 +143,26 @@ header{
     text-shadow: 2px 2px #181818;
 }
 
+
+.ph-proj-bar{
+    width: 100%;
+}
+
+.ph-proj-bar img{
+    width: 100%;
+    height: auto;
+}
+
+.ph-bt-arrows{
+    margin-top:20%;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 50px;
+}
+
+
+
 /**** ids ****/
 
 #home{
@@ -164,4 +179,18 @@ header{
 #projetos{
     margin-left: 75px;
     height: 100vh;
+}
+
+/* edit animations */
+
+
+.animate__rotateIn{
+    animation-iteration-count: infinite;    
+}
+
+
+
+.animate__bounceInLeft {
+    animation-duration: cubic-bezier(.215,.61,.355,1);
+    animation-timing-function: cubic-bezier(.215,.61,.355,1);
 }
