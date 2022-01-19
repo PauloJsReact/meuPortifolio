@@ -1,5 +1,9 @@
 var dataBase = "https://testjsoncostrut.firebaseio.com/projects.json"
-var projBar = document.querySelector(".ph-proj-bar");
+var projBar = document.querySelector(".ph-proj-img");
+var projQuant = 0;
+var slaidNow = 0;
+var dataTable = [];
+
 AOS.init();
 /* Functions to nav menu */
 
@@ -26,40 +30,43 @@ async function chargeProjects() {
     table = await res.json();
 
     if (table != "") {
-
-        slaiders()
-
+        projQuant = table.length;
+        dataTable = table;
+        console.log('Total de projetos feitos atualmente ' + projQuant);
+        slaidPosition();
     } else {
 
     }
 }
 
-var index = 0
-function slaiders() {
-    projBar.innerHTML = `<img src='${table[index].img}'  class='animate__animated animate__flipInY'/>`
+
+function slaidPosition() {
+    var imgData = dataTable[parseInt(slaidNow)].img;
+    const printPhoto = `<img class="ph-proj-img" src='${imgData}' />`
+    projBar.innerHTML = printPhoto
+
 }
 
 
-function nextSlaide() {
-    if (index < table.length) {
-        index = index + 1
-        projBar.innerHTML = `<img src='${table[index].img}'  class='animate__animated animate__flipInY'/>`
+function nextSlaid() {
+    if (slaidNow < projQuant && slaidNow != projQuant) {
+        slaidNow = parseInt(slaidNow) + 1;
+        slaidPosition();
     } else {
-        index = 0
-        projBar.innerHTML = `<img src='${table[index].img}'  class='animate__animated animate__flipInY'/>`
+        slaidNow = 0;
+        slaidPosition();
     }
-    console.log(index)
 }
 
-function firstSlaide() {
-    if (index < table.length) {
-        index = index - 1
-        projBar.innerHTML = `<img src='${table[index].img}'  class='animate__animated animate__zoomInRight'/>`
-        console.log(table[index].img)
+
+function firstSlaid() {
+    if (slaidNow < projQuant) {
+        slaidNow = parseInt(slaidNow) - 1
+        slaidPosition();
     } else {
-        projBar.innerHTML = `<img src='${table[index].img}'  class='animate__animated animate__zoomInRight'/>`
+        slaidNow = 1;
+        slaidPosition();
     }
-    console.log(index)
 }
 
 chargeProjects();
