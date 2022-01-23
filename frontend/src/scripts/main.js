@@ -1,9 +1,9 @@
 var dataBase = "https://testjsoncostrut.firebaseio.com/projects.json"
 var projBar = document.querySelector(".ph-proj-img");
-var projQuant = 0;
-var slaidNow = 0;
-var dataTable = [];
-
+var table = [];
+var max;
+var photoIndex;
+var min = 0;
 AOS.init();
 /* Functions to nav menu */
 
@@ -30,43 +30,33 @@ async function chargeProjects() {
     table = await res.json();
 
     if (table != "") {
-        projQuant = table.length;
-        dataTable = table;
-        console.log('Total de projetos feitos atualmente ' + projQuant);
-        slaidPosition();
-    } else {
+        max = table.length;
+        photoIndex = 0;
+        photoCharge(table[photoIndex].img);
 
     }
 }
 
-
-function slaidPosition() {
-    var imgData = dataTable[parseInt(slaidNow)].img;
-    const printPhoto = `<img class="ph-proj-img" src='${imgData}' />`
-    projBar.innerHTML = printPhoto
-
+function photoCharge(photo) {
+    projBar.style.backgroundImage = `URL(${photo})`;
 }
 
-
-function nextSlaid() {
-    if (slaidNow < projQuant && slaidNow != projQuant) {
-        slaidNow = parseInt(slaidNow) + 1;
-        slaidPosition();
-    } else {
-        slaidNow = 0;
-        slaidPosition();
+function chargeNext() {
+    photoIndex++;
+    if (photoIndex > max) {
+        console.log("val " + max)
+        photoIndex = 0;
     }
+    photoCharge(table[photoIndex].img);
 }
 
-
-function firstSlaid() {
-    if (slaidNow < projQuant) {
-        slaidNow = parseInt(slaidNow) - 1
-        slaidPosition();
+function chargeBack() {
+    if (photoIndex === 0) {
+        photoIndex = max;
     } else {
-        slaidNow = 1;
-        slaidPosition();
+        photoIndex--;
     }
+    photoCharge(table[photoIndex].img);
 }
 
 chargeProjects();
