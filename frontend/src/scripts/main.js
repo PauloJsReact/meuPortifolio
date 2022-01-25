@@ -21,7 +21,9 @@ function navProjects() {
     window.location.href = "#projetos";
 }
 
-
+function sendEmail() {
+    window.location.href = "mailto:paulo_contato@notaveldev.com.br";
+}
 /**  Functions for slaider  **/
 var table;
 
